@@ -1,12 +1,12 @@
 # Playing Atari with Deep Reinforcement Learning: Comparing Individual Models with Ensembles and Soups
 
-<center>
+<div align='center'>
 
 ![Breakout](https://gymnasium.farama.org/_images/breakout.gif)
 ![Enduro](https://gymnasium.farama.org/_images/enduro.gif)
 ![Seaquest](https://gymnasium.farama.org/_images/seaquest.gif)
 
-</center>
+</div>
 
 This repository accompanies my master's project at Ulm University. It contains the code for training and evaluating 
 the models, as well as plotting the results of the experiments.
