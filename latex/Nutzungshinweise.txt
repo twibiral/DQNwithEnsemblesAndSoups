@@ -1,0 +1,43 @@
+Liebe Nutzerin, lieber Nutzer dieser Vorlage,
+
+diese Vorlage soll dir helfen deine Abschlussarbeit (Bachelor, Master,
+Diss, …) zu schreiben. Sie ist bzgl. Seitenlayout und Typografie an deutschsprachige Gepflogenheiten angepasst, die Titelseite ist speziell für das Corporate Design der Universität Ulm entstanden.
+
+
+Benutzung
+
+Im oberen Teil der tex-Datei sind von dir diverse Daten einzusetzen,
+Name und Matrikelnummer, Titel deiner Arbeit, alles, was später beispielsweise auf der Titelseite benötigt wird. In verschiedenen
+Zeilen müsst ihr eure Daten und Werte einsetzen.
+Kommentiere die richtige Fakultät ein!
+
+In Zeile 150 zeigt ein Kommentar, dass ab hier die eigenen Kapitel der
+Arbeit eingebunden werden sollen. Ein Beispiel-Kapitel ist in der Vorlage
+enthalten (einleitung.tex).
+
+Für das Literatur-Verzeichnis verwende BibLaTeX und dessen Zitier- und Bibliographier-Stile!
+
+
+Das TeXen
+
+Meist wirst du einen Editor verwenden, der dir einiges an Unterstützung bietet.
+Die Vorlage ist für pdflatex optimiert, dein Editor sollte direkt ein PDF
+erzeugen.
+
+
+Dateiformate
+
+Die Vorlage ist als UTF8 gespeichert. Die meisten Editoren können mittlerweile UTF8 Folgende Programme lassen sich direkt mit UTF8 nutzen:
+
+Linux: kile, Texmaker, gedit (mit plugins) Mac: TeX-Shop Windows: Texmaker
+
+je nach Programm muss noch eingestellt werden, dass die Dateien in UTF8 sind
+(Texmaker, Tex-Shop).
+
+UTF8 wurde gewählt, weil dieses Format Umlaute und Sonderzeichen direkt
+unterstützt. Auch deutsche Anführungszeichen lassen sich ohne Sonderbefehle
+nutzen.
+
+
+Ulm 24.3.2009  Guido de Melo (Ur-Autor)
+Ulm, 30.10.2018, Michaela Hering

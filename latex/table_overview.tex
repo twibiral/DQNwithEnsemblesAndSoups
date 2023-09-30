@@ -1,0 +1,49 @@
+\begin{sidewaystable}
+\centering
+\begin{tabularx}{\textheight}{@{}l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X@{}}
+\toprule
+ & Breakout & Enduro & Seaquest \\
+\midrule
+Interpretable CNN & 1.000 $\pm$ 1.000 & 40.375 $\pm$ 43.694 & 40.375 $\pm$ 43.694 \\
+\textcite{mnih_human-level_2015} & 2.500 $\pm$ 1.871 & 88.438 $\pm$ 95.957 & 88.438 $\pm$ 95.957 \\
+\textcite{mnih_human-level_2015} with Huber Loss and Adam & 3.000 $\pm$ 3.536 & 31.500 $\pm$ 36.776 & 31.500 $\pm$ 36.776 \\
+\textcite{mnih_playing_2013} & 3.167 $\pm$ 2.927 & 38.000 $\pm$ 42.715 & 38.000 $\pm$ 42.715 \\
+\hdashline
+3-Snapshot Ensemble (average) with \textcite{mnih_human-level_2015} & 1.500 $\pm$ 1.291 & 82.167 $\pm$ 96.577 & 82.167 $\pm$ 96.577 \\
+3-Snapshot Ensemble (average) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 3.833 $\pm$ 3.971 & 26.300 $\pm$ 35.979 & 26.300 $\pm$ 35.979 \\
+3-Snapshot Ensemble (average) with \textcite{mnih_playing_2013} & 2.000 $\pm$ 1.581 & 26.833 $\pm$ 28.103 & 26.833 $\pm$ 28.103 \\
+3-Snapshot Ensemble (logistic average) with \textcite{mnih_human-level_2015} & 1.500 $\pm$ 1.291 & 65.500 $\pm$ 66.148 & 65.500 $\pm$ 66.148 \\
+3-Snapshot Ensemble (logistic average) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 4.167 $\pm$ 4.355 & 24.500 $\pm$ 32.992 & 24.500 $\pm$ 32.992 \\
+3-Snapshot Ensemble (logistic average) with \textcite{mnih_playing_2013} & 2.200 $\pm$ 1.924 & 42.818 $\pm$ 50.864 & 42.818 $\pm$ 50.864 \\
+3-Snapshot Ensemble (majority vote) with \textcite{mnih_human-level_2015} & 3.750 $\pm$ 5.560 & 59.545 $\pm$ 67.784 & 59.545 $\pm$ 67.784 \\
+3-Snapshot Ensemble (majority vote) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 3.333 $\pm$ 3.266 & 29.895 $\pm$ 35.774 & 29.895 $\pm$ 35.774 \\
+3-Snapshot Ensemble (majority vote) with \textcite{mnih_playing_2013} & 2.000 $\pm$ 1.581 & 28.111 $\pm$ 28.367 & 28.111 $\pm$ 28.367 \\
+Top-3 Ensemble (average) with \textcite{mnih_human-level_2015} & 1.667 $\pm$ 1.528 & 78.500 $\pm$ 79.156 & 78.500 $\pm$ 79.156 \\
+Top-3 Ensemble (average) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 1.000 $\pm$ 1.000 & 40.429 $\pm$ 41.158 & 40.429 $\pm$ 41.158 \\
+Top-3 Ensemble (average) with \textcite{mnih_playing_2013} & 2.400 $\pm$ 2.074 & 23.778 $\pm$ 21.515 & 23.778 $\pm$ 21.515 \\
+Top-3 Ensemble (logistic average) with \textcite{mnih_human-level_2015} & 1.500 $\pm$ 1.291 & 104.182 $\pm$ 97.274 & 104.182 $\pm$ 97.274 \\
+Top-3 Ensemble (logistic average) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 1.000 $\pm$ 1.000 & 29.000 $\pm$ 31.932 & 29.000 $\pm$ 31.932 \\
+Top-3 Ensemble (logistic average) with \textcite{mnih_playing_2013} & 1.500 $\pm$ 1.291 & 18.000 $\pm$ 23.615 & 18.000 $\pm$ 23.615 \\
+Top-3 Ensemble (majority vote) with \textcite{mnih_human-level_2015} & 0.500 $\pm$ 0.707 & 7.000 $\pm$ 11.269 & 7.000 $\pm$ 11.269 \\
+Top-3 Ensemble (majority vote) with \textcite{mnih_human-level_2015} with Huber Loss and Adam & 4.500 $\pm$ 6.364 & 41.500 $\pm$ 40.367 & 41.500 $\pm$ 40.367 \\
+Top-3 Ensemble (majority vote) with \textcite{mnih_playing_2013} & 2.000 $\pm$ 1.581 & 32.846 $\pm$ 43.353 & 32.846 $\pm$ 43.353 \\
+Top-3 Mixed Ensemble (average) & 1.500 $\pm$ 1.291 & 48.600 $\pm$ 57.233 & 48.600 $\pm$ 57.233 \\
+Top-3 Mixed Ensemble (logistic average) & 3.500 $\pm$ 3.271 & 47.550 $\pm$ 60.250 & 47.550 $\pm$ 60.250 \\
+Top-3 Mixed Ensemble (majority vote) & 1.500 $\pm$ 1.291 & 69.238 $\pm$ 90.704 & 69.238 $\pm$ 90.704 \\
+\hdashline
+3-Snapshot Soup of \textcite{mnih_human-level_2015} & 2.833 $\pm$ 2.317 & 185.708 $\pm$ 187.752 & 185.708 $\pm$ 187.752 \\
+3-Snapshot Soup of \textcite{mnih_human-level_2015} with Huber Loss and Adam & 3.500 $\pm$ 5.066 & 43.400 $\pm$ 44.335 & 43.400 $\pm$ 44.335 \\
+3-Snapshot Soup of \textcite{mnih_playing_2013} & 2.833 $\pm$ 2.483 & 28.818 $\pm$ 35.977 & 28.818 $\pm$ 35.977 \\
+Top-3 Soup of \textcite{mnih_human-level_2015} & 2.333 $\pm$ 2.517 & 29.571 $\pm$ 31.379 & 29.571 $\pm$ 31.379 \\
+Top-3 Soup of \textcite{mnih_human-level_2015} with Huber Loss and Adam & 4.500 $\pm$ 6.364 & 25.800 $\pm$ 24.253 & 25.800 $\pm$ 24.253 \\
+Top-3 Soup of \textcite{mnih_playing_2013} & 4.500 $\pm$ 6.364 & 41.500 $\pm$ 44.153 & 41.500 $\pm$ 44.153 \\
+\hdashline
+Random Play & 4.125 $\pm$ 3.563 & 123.720 $\pm$ 117.537 & 123.720 $\pm$ 117.537 \\
+\hdashline
+
+Humans (via \textcite{mnih_playing_2013}) & 31 & 368 & 28010 \\
+\textcite{mnih_playing_2013} & 168 & 470 & 1705 \\
+\textcite{mnih_human-level_2015} & 401 $\pm$ 26.9 & 301.8 $\pm$ 24.6 & 5286 $\pm$ 1310\\
+\end{tabularx}
+\caption{\label{tab:results}Table with results for Breakout, Enduro, and Seaquest. The number after $\pm$ indicates the standard deviation}
+\end{sidewaystable}

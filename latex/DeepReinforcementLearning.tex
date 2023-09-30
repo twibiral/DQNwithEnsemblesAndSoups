@@ -1,0 +1,282 @@
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[a4paper,12pt,
+headsepline,           % Linie zw. Kopfzeile und Text
+oneside,               % einseitig
+% pointlessnumbers,      % keine Punkte nach den letzten Ziffern in Überschriften
+bibtotoc,              % LV im IV
+%DIV=15,               % Satzspiegel auf 15er Raster, schmalere Ränder   
+% BCOR15mm               % Bindekorrektur
+%,draft
+% appendixprefix=true
+]{scrbook}
+\KOMAoptions{DIV=last} % Neuberechnung Satzspiegel nach Laden von Paket helvet
+\pagestyle{headings}
+\usepackage{blindtext}
+\usepackage{etoolbox}
+\usepackage{pdflscape}
+\usepackage{placeins}
+
+\makeatletter
+% \g@addto@macro\appendix{%
+%   \renewcommand*{\chapterformat}{%
+%     {\chapapp\nobreakspace\thechapter\autodot\enskip--\enskip}%
+%   }
+%   \renewcommand*{\chaptermarkformat}{%
+%     {\chapapp\nobreakspace\thechapter\autodot\enskip--\enskip}%
+%   }
+%   \let\oldaddcontentsline\addcontentsline
+%   \newcommand\hackedaddcontentsline[3]{\oldaddcontentsline{#1}{#2}{\chapapp\nobreakspace#3}}
+%   \let\oldchapter\chapter
+%   \renewcommand*\chapter[1]{%
+%     \let\addcontentsline\hackedaddcontentsline%
+%     \oldchapter{#1}%
+%     \let\addcontentsline\oldaddcontentsline%
+%   }
+% }
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
+% für Texte in deutscher Sprache
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\hypersetup{%
+    % pdftitle=\pdfescapestring{\@titel},
+% 	pdfauthor={\@fullname},
+% 	pdfsubject={\@typ},
+% 	pdfproducer={pdfeTex 3.14159-1.30.6-2.2},
+	colorlinks=false,
+	pdfborder=0 0 0	% no box surrounding links!
+}
+
+% Helvetica als Standard-Dokumentschrift
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault} 
+
+\usepackage{graphicx}
+
+% Literaturverzeichnis mit BibLKaTeX
+\usepackage[babel]{csquotes}
+\usepackage{biblatex}
+\bibliography{bibliography}
+
+% Für Tabellen mit fester Gesamtbreite und variabler Spaltenbreite
+\usepackage{tabularx} 
+
+% Besondere Schriftauszeichnungen
+\usepackage{url}              % \url{http://...} in Schreibmaschinenschrift
+\usepackage{color}            % zum Setzen farbigen Textes
+
+\usepackage{amssymb, amsmath} % Pakete für Mathe-Umgebungen und -Symbole
+
+\usepackage{booktabs}
+\usepackage{arydshln}        % Dashed lines in table
+\usepackage[nameinlink]{cleveref}   % Better referencing of figures and sections
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{microtype}
+% \usepackage[showframe]{geometry}
+\usepackage{geometry}
+% \usepackage[figuresleft]{rotating}
+% \usepackage[figuresright]{rotating}
+\usepackage{rotating}
+\usepackage{censor}
+
+\usepackage{setspace}         % Paket für div. Abstände, z.B. ZA
+%\onehalfspacing              % nur dann, wenn gefordert; ist sehr groß!!
+\setlength{\parindent}{0pt}   % kein linker Einzug der ersten Absatzzeile
+\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
+
+% Tiefe, bis zu der Überschriften in das Inhaltsverzeichnis kommen
+\setcounter{tocdepth}{3}      % ist Standard
+
+% Beispiele für Quellcode
+% \lstset{language=Java,
+%   showstringspaces=false,
+%   frame=single,
+%   numbers=left,
+%   basicstyle=\ttfamily,
+%   numberstyle=\tiny}
+
+% hier Namen etc. einsetzen
+\newcommand{\fullname}{Tim Wibiral}
+\newcommand{\email}{tim.wibiral@uni-ulm.de}
+\newcommand{\titel}{Playing Atari with Deep Reinforcement Learning: Comparing Individual Models with Ensembles and Soups}
+\newcommand{\jahr}{2023}
+\newcommand{\matnr}{\censor{1234567}}
+\newcommand{\gutachterA}{Zeqiang Zhang}
+\newcommand{\gutachterB}{Prof.\,Dr.\,Daniel Braun}
+\newcommand{\betreuer}{Betreuername}
+
+% hier die Fakultät auswählen
+%\newcommand{\fakultaet}{---  Im Quellcode anpassen nicht vergessen! ---}
+\newcommand{\fakultaet}{Faculty of Engineering, \\Computer Science and Psychology}
+%\newcommand{\fakultaet}{Mathematik und\\Wirtschafts-\\wissenschaften}
+%\newcommand{\fakultaet}{Medizin}
+%\newcommand{\fakultaet}{Naturwissenschaften}
+
+% hier das Institut einsetzen
+\newcommand{\institut}{Institute of Neural Information Processing}
+
+% Informationen, die LaTeX in die PDF-Datei schreibt
+\pdfinfo{
+  /Author (\fullname)
+  /Title (\titel)
+  /Producer     (pdfeTex 3.14159-1.30.6-2.2)
+  /Keywords ()
+}
+
+\usepackage{hyperref}
+\hypersetup{
+pdftitle=\titel,
+pdfauthor=\fullname,
+pdfsubject={Diplomarbeit},
+pdfproducer={pdfeTex 3.14159-1.30.6-2.2},
+colorlinks=false,
+pdfborder=0 0 0	% keine Box um die Links!
+}
+
+% Trennungsregeln
+\hyphenation{Sil-ben-trenn-ung}
+
+\begin{document}
+\frontmatter
+
+% Titelseite
+\thispagestyle{empty}
+\begin{addmargin*}[4mm]{-10mm}
+
+\includegraphics[height=1.8cm]{images/unilogo_bild}
+\hfill
+\includegraphics[height=1.8cm]{images/unilogo_wort}\\[0em]
+
+{\footnotesize
+%{\bfseries Universität Ulm} \textbar ~89069 Ulm \textbar ~Germany
+\hspace*{84mm}\parbox[t]{70mm}{\flushright\bfseries \fakultaet\\
+% TODO hier Institut anpassen
+\mdseries \institut}\\[3cm]
+
+\parbox{150mm}{\centering \bfseries \LARGE \titel}\\[2.5em]
+\parbox{140mm}{\centering \footnotesize Master's Project at Ulm University}\\[3em]
+\vfill
+{\footnotesize \bfseries Author:}\\
+{\footnotesize \fullname\\ \email}\\ Student Number: \matnr\\[2em]
+{\footnotesize \bfseries Supervisors:}\\                     
+{\footnotesize \gutachterA\\ \gutachterB}\\[2em]
+% {\footnotesize \bfseries Betreuer:}\\ 
+% {\footnotesize \betreuer}\\\\
+{\footnotesize \jahr}
+}
+\end{addmargin*}
+
+
+% Impressum
+\clearpage
+\thispagestyle{empty}
+{ \small
+  \centering
+  Version from \today \\\vfill
+  \copyright~\jahr~\fullname\\[0.5em]
+% Wenn Sie Ihre Arbeit unter einer freien Lizenz bereitstellen möchten, können Sie die nächste Zeile in Ihren Code aufnehmen. Bitte beachten Sie, dass Sie hierfür an allen Inhalten, inklusive enthaltener Abbildungen, die notwendigen Rechte benötigen! Beim Veröffentlichungsexemplar Ihrer Dissertation achten Sie bitte darauf, dass der Lizenztext nicht den Angaben in den Metadaten der genutzten Publikationsplattform widerspricht. Nähere Information zu den Creative Commons Lizenzen erhalten Sie hier: https://creativecommons.org/licenses/
+%This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. To view a copy of this license, visit \href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/} or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA. \\
+  % Satz: PDF-\LaTeXe
+}
+\clearpage
+
+% ab hier Zeilenabstand etwas größer 
+\setstretch{1.2}
+
+% \tableofcontents
+
+\thispagestyle{plain}
+\section*{Abstract}
+
+\textbf{TODO}
+\clearpage
+
+\mainmatter
+\include{main.tex}
+
+
+
+\appendix
+\chapter{All Results}\label{appendix:results}
+
+% \Cref{fig:all_models_breakout,fig:all_models_enduro,fig:all_models_seaquest} on the following pages compare the reward distributions for all models, ensembles, and soups. 
+\Cref{tab:results} shows the exact results for all models, ensembles, and soups.
+
+\newgeometry{margin=1cm}
+% \clearpage
+% \thispagestyle{empty}
+% \begin{sidewaysfigure}[ht!]
+%   \centering
+%   \makebox[0pt]{\includegraphics[width=\textheight]{plots/reward_distribution_breakout_mean.pdf}}
+%   \caption{Reward distribution for all models on Breakout. The mean is indicated by the + symbol.}
+%   \label{fig:all_models_breakout}
+% \end{sidewaysfigure}
+
+% \clearpage
+% \thispagestyle{empty}
+% \begin{sidewaysfigure}[ht!]
+%   \centering
+%   \makebox[0pt]{\includegraphics[width=\textheight]{plots/reward_distribution_enduro_mean.pdf}}
+%   \caption{Reward distribution for all models on Breakout. The mean is indicated by the + symbol.}
+%   \label{fig:all_models_enduro}
+% \end{sidewaysfigure}
+
+% \clearpage
+% \thispagestyle{empty}
+% \begin{sidewaysfigure}[ht!]
+%   \centering
+%   \makebox[0pt]{\includegraphics[width=\textheight]{plots/reward_distribution_seaquest_mean.pdf}}
+%   \caption{Reward distribution for all models on Breakout. The mean is indicated by the + symbol.}
+%   \label{fig:all_models_seaquest}
+% \end{sidewaysfigure}
+
+\clearpage
+\thispagestyle{empty}
+\include{table_overview}
+\clearpage
+\restoregeometry
+
+
+\chapter{A Note on Keras and PyTorch}\label{appendix:keras}
+
+I implemented the algorithm using Tensorflow and Keras, as I am more familiar with Keras and used it for more projects. It worked well with the \emph{CartPole}-environment and achieved good results in reasonable time. When I went on to test it on the Atari Games for 10,000 or 50,000 frames, it also seemed to work, but did not learn a lot. To achieve good performance, a lot more experience is necessary;~\parencite{mnih_playing_2013} trained for 10 Million frames and~\parencite{van_hasselt_deep_2015} trained for around 200 Million frames.
+
+While running it for a few thousand frames on my desktop computer worked fine, it is not feasible to run the algorithm for 10 million frames on it. Instead, I tried to run it on the \emph{BWUniCluster} for 1 million frames with one GPU and 100GB of RAM allocated. Unfortunately, the program execution failed because the program needed more than the available 100GB.
+
+It was obvious now, that I there was some problem with the memory use, as 1 Million frames should only need around 28GB of memory space. The same problems occurred in the official code examples of Keras%
+\footnote{\url{https://keras.io/examples/rl/deep_q_network_breakout/}} %
+where they only managed to run 1 million frames with a buffer of 100,000 frames.
+
+The memory footprint still didn't change after optimizing the buffer to delete each tensor separately when a tuple is removed from the buffer. It became clear that most of the memory was used in the background by Keras itself, hence I figured, that Keras must be calculating the gradients for everything that was happening. After isolating most calls to Keras functions into separate functions (with disabled automatic gradient calculation) the amount of memory was reduced by two-thirds and the program execution speed up by three. Still, it was not possible to isolate all calls to Keras and some gradients are still calculated unnecessarily.
+
+In retrospec, it would have been better to use PyTorch from the beginning, as PyTorch allows more control over which gradients are calculated. Maybe that is one of the reasons why other RL libraries like Stable-Baseline3%
+\footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} %
+use PyTorch.
+
+
+
+\cleardoublepage
+\backmatter
+
+\clearpage
+\printbibliography
+
+% \clearpage
+% \thispagestyle{empty}
+
+% Name: \fullname \hfill Matrikelnummer: \matnr \vspace{2cm}
+
+% \minisec{Erklärung}
+
+% Ich erkläre, dass ich die Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe.\vspace{2cm}
+
+% Ulm, den \dotfill
+
+% \hspace{10cm} {\footnotesize \fullname}
+\end{document}
