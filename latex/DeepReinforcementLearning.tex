@@ -52,6 +52,12 @@ bibtotoc,              % LV im IV
 	pdfborder=0 0 0	% no box surrounding links!
 }
 
+\RedeclareSectionCommand[
+  beforeskip=2em,
+  afterskip=1em,
+  % afterindent=false
+  ]{chapter}
+
 % Helvetica als Standard-Dokumentschrift
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault} 
@@ -67,7 +73,6 @@ bibtotoc,              % LV im IV
 \usepackage{tabularx} 
 
 % Besondere Schriftauszeichnungen
-\usepackage{url}              % \url{http://...} in Schreibmaschinenschrift
 \usepackage{color}            % zum Setzen farbigen Textes
 
 \usepackage{amssymb, amsmath} % Pakete für Mathe-Umgebungen und -Symbole
@@ -129,7 +134,7 @@ bibtotoc,              % LV im IV
   /Keywords ()
 }
 
-\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \hypersetup{
 pdftitle=\titel,
 pdfauthor=\fullname,
@@ -194,7 +199,8 @@ pdfborder=0 0 0	% keine Box um die Links!
 \thispagestyle{plain}
 \section*{Abstract}
 
-\textbf{TODO}
+Deep Q-learning can achieve human-level, and higher than human-level, scores on Atari 2600 games. This master's project tries to investigate whether the performance of deep q-networks can be improved using Ensembles and Soups. Different models are trained on the games \emph{Breakout}, \emph{Enduro}, and \emph{Seaquest} and their performance is compared. 
+Wilcoxon signed-rank tests are used to compare the models and to determine whether the differences in performance are significant. Additionally, an interpretable CNN is trained, and its learning process is analyzed. 
 \clearpage
 
 \mainmatter
@@ -255,7 +261,7 @@ where they only managed to run 1 million frames with a buffer of 100,000 frames.
 
 The memory footprint still didn't change after optimizing the buffer to delete each tensor separately when a tuple is removed from the buffer. It became clear that most of the memory was used in the background by Keras itself, hence I figured, that Keras must be calculating the gradients for everything that was happening. After isolating most calls to Keras functions into separate functions (with disabled automatic gradient calculation) the amount of memory was reduced by two-thirds and the program execution speed up by three. Still, it was not possible to isolate all calls to Keras and some gradients are still calculated unnecessarily.
 
-In retrospec, it would have been better to use PyTorch from the beginning, as PyTorch allows more control over which gradients are calculated. Maybe that is one of the reasons why other RL libraries like Stable-Baseline3%
+In retrospect, it would have been better to use PyTorch from the beginning, as PyTorch allows more control over which gradients are calculated. Maybe that is one of the reasons why other RL libraries like Stable-Baseline3%
 \footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} %
 use PyTorch.
 
@@ -265,18 +271,8 @@ use PyTorch.
 \backmatter
 
 \clearpage
+\renewcommand*{\bibfont}{\small}
 \printbibliography
 
-% \clearpage
-% \thispagestyle{empty}
 
-% Name: \fullname \hfill Matrikelnummer: \matnr \vspace{2cm}
-
-% \minisec{Erklärung}
-
-% Ich erkläre, dass ich die Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe.\vspace{2cm}
-
-% Ulm, den \dotfill
-
-% \hspace{10cm} {\footnotesize \fullname}
 \end{document}
